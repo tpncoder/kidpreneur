@@ -4,8 +4,8 @@ import { Separator } from "@/components/ui/separator"
 import { Home, PlusCircle, Lightbulb, LogIn, LogOut, User } from "lucide-react"
 import { cookies } from "next/headers"
 
-export function Navbar() {
-  const cookieStore = cookies()
+export async function Navbar() {
+  const cookieStore = await cookies()
   const userId = cookieStore.get("userId")?.value
   const loggedIn = !!userId
 
