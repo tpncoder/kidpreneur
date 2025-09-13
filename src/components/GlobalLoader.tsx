@@ -1,3 +1,5 @@
+"use client"; // <-- Add this at the very top
+
 import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 
@@ -5,9 +7,8 @@ export default function GlobalLoader() {
   const pathname = usePathname();
 
   useEffect(() => {
-    // Trigger logic whenever the route changes
-    console.log("Route changed to", pathname);
+    console.log("Pathname changed:", pathname);
   }, [pathname]);
 
-  return <div>Loading...</div>;
+  return null; // Or your loader JSX
 }
