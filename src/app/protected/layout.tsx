@@ -3,7 +3,7 @@ import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
 
 export default async function ProtectedLayout({ children }: { children: React.ReactNode }) {
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
   const userCookie = cookieStore.get("userId")?.value
 
   if (!userCookie) {
