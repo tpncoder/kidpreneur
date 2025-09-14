@@ -17,7 +17,7 @@ export default function DeletePostButton({ postId }: { postId: number }) {
         method: "DELETE",
       })
       if (res.ok) {
-        router.refresh()
+        router.push("/protected/")
       } else {
         alert("Failed to delete post")
       }
